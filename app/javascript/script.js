@@ -1,3 +1,5 @@
+
+alert('ça marche');
 const refreshCards = function() {
     document.querySelector('.cards-container').innerHTML = '';
     document.querySelector('.input-wrapper').classList.add('loading');
