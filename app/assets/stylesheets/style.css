@@ -1,0 +1,44 @@
+header{
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    border-bottom: solid 1px #ffcc03;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 50px;
+    
+}
+.logo{
+    width: auto;
+    height: auto;
+    background-color: white;
+    margin-left: 3%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+
+header .link {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+.link p {
+    
+    margin-left: 100px;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.padding{
+    padding:7vh;
+}

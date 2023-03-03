@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "style" %>
+    <%= stylesheet_link_tag "reach" %>
+    <%= stylesheet_link_tag "card" %>
+    <%= stylesheet_link_tag "form" %>
   </head>
   <header>
-   <%= link_to "reach", reach_path %>
+    <div class="link">
+      <div class=logo>
+        <%= image_tag "logo.svg", height: 45%>
+      </div>
+      <p><%= link_to "Home", cards_path %><p>
+    </div>
+    <div class="link">
+      <%= link_to "New card", new_card_path %>
+      <p><%= link_to "Research", reach_path %></p>
+    </div>
   </header>
+  <div class ="padding">
+  </div>
+  
 
   <body>
+ 
     <%= yield %>
   </body>
 </html>
+

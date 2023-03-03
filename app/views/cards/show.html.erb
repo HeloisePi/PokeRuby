@@ -2,9 +2,18 @@
 
 <%= render @card %>
 
-<div>
-  <%= link_to "Edit this card", edit_card_path(@card) %> |
-  <%= link_to "Back to cards", cards_path %>
+<div class="center" >
+  <div class ="button">
+  <%= link_to "Edit this card", edit_card_path(@card) %> 
+  </div>
 
-  <%= button_to "Destroy this card", @card, method: :delete %>
+  <div class ="button">
+  <%= link_to "Back to cards", cards_path %>
+  </div>
+  
+  <div class ="button red">
+  <%= link_to "Destroy this card", @card, method: :delete %>
+  </div>
 </div>
+
+
