@@ -10,18 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
+  <div >
     <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
+    <div class="center" >
+      <%= form.text_field :image %>
+    </div>
   </div>
 
-  <div>
+  <div >
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <div class="center" >
+      <%= form.text_field :name %>
+    </div>
   </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="center">
+    <div class="button submit" >
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
