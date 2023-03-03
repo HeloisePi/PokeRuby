@@ -7,9 +7,9 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "reset" %>
     <%= stylesheet_link_tag "style" %>
-    <%= stylesheet_link_tag "reach" %>
     <%= stylesheet_link_tag "card" %>
     <%= stylesheet_link_tag "form" %>
+    <%= stylesheet_link_tag "reach" %>
   </head>
   <header>
     <div class="link">
@@ -17,9 +17,7 @@
         <%= image_tag "logo.svg", height: 45%>
       </div>
       <p><%= link_to "Home", cards_path %><p>
-    </div>
-    <div class="link">
-      <%= link_to "New card", new_card_path %>
+      <p><%= link_to "New card", new_card_path %></p>
       <p><%= link_to "Research", reach_path %></p>
     </div>
   </header>

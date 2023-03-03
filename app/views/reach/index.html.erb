@@ -1,6 +1,6 @@
 <div class="container">
     <div class="input-wrapper">
-        <input type="text" name="pokemon-name" placeholder="Search for a pokemon...">
+        <input class="input-reach" type="text" name="pokemon-name" placeholder="Search for a pokemon...">
     </div>
 
     <div class="cards-container">
@@ -10,6 +10,47 @@
 
 
 <script>
+function infinie() {
+    setInterval(function() {
+
+let card = document.querySelectorAll(".effect")
+
+function handleMouseMove(e) {
+    const el = this
+    const elRect = el.getBoundingClientRect()
+    const x = e.clientX - elRect.x
+    const y = e.clientY - elRect.y
+    const midCardWidth = elRect.width / 2
+    const midCardHeight = elRect.height / 2
+    const angleX = ((-(y - midCardHeight)) * 100 / midCardHeight) * 0.28
+    const angleY = ((x - midCardWidth) * 100 / midCardWidth) * 0.2
+    let glowX = x / elRect.width * 100
+    let glowY = y / elRect.height * 100
+    el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1)`
+    el.style['z-index'] = `100`
+    el.children[1].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1)`
+    el.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, white, transparent)`
+    this.children[1].style.opacity = "0.3"
+    console.log(angleY)
+    console.log(angleX)
+}
+
+function resetCardTransform() {
+    this.children[0].style.transform = "rotateX(0) rotateY(0)"
+    this.children[1].style.transform = "rotateX(0) rotateY(0)"
+    this.children[1].style.opacity = "0"
+}
+
+card.forEach( el => {
+    el.addEventListener("mousemove", handleMouseMove)
+    el.addEventListener("mouseleave", resetCardTransform)
+})
+
+}, 1000);
+}
+
+infinie();
+
 const refreshCards = function() {
     document.querySelector('.cards-container').innerHTML = '';
     document.querySelector('.input-wrapper').classList.add('loading');
@@ -24,14 +65,17 @@ const refreshCards = function() {
                 const cardElement = document.createElement('a');
                 cardElement.classList.add('card', 'flipped');
                 cardElement.innerHTML = `
-                    <div class="side front" style="background-image:url('${card.imageUrl}')"></div>
+                    <div class="effect">
+                        <img class="side front" src="${card.imageUrl}">
+                        <div class="glow"></div>
+                    </div>
                     <div class="side back"></div>
                 `;
                 document.querySelector('.cards-container').appendChild(cardElement);
 
                 setTimeout(function() {
                     cardElement.classList.remove('flipped');
-                }, 100 * i);
+                }, 50 * i);
             });
         });
 };
@@ -41,35 +85,4 @@ document.querySelector('input[name="pokemon-name"]').addEventListener('keydown',
     clearTimeout(refreshTimeout);
     refreshTimeout = setTimeout(refreshCards, 500);
 });
-
-// ! anime card
-const card = document.querySelectorAll(".card")
-
-function handleMouseMove(e) {
-    const el = this
-    const elRect = el.getBoundingClientRect()
-    const x = e.clientX - elRect.x
-    const y = e.clientY - elRect.y
-    const midCardWidth = elRect.width / 2
-    const midCardHeight = elRect.height / 2
-    const angleX = ((-(y - midCardHeight)) * 100 / midCardHeight) * 0.28
-    const angleY = ((x - midCardWidth) * 100 / midCardWidth) * 0.2
-    let glowX = x / elRect.width * 100
-    let glowY = y / elRect.height * 100
-    el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`
-    el.children[1].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`
-    el.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, white, transparent)`
-    this.children[1].style.opacity = "0.3"
-}
-
-function resetCardTransform() {
-    this.children[0].style.transform = "rotateX(0) rotateY(0)"
-    this.children[1].style.transform = "rotateX(0) rotateY(0)"
-    this.children[1].style.opacity = "0"
-}
-
-card.forEach( el => {
-    el.addEventListener("mousemove", handleMouseMove)
-    el.addEventListener("mouseleave", resetCardTransform)
-})
 </script>

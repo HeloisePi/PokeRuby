@@ -29,9 +29,9 @@ header .link {
     margin-left: 10px;
     
 }
-.link p {
+.link {
+    gap: 2vw;
     
-    margin-left: 100px;
     
 }
 a{
@@ -41,4 +41,9 @@ a{
 
 .padding{
     padding:7vh;
+}
+
+a{
+    width: auto;
+    white-space: nowrap;
 }
