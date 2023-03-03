@@ -1,0 +1,21 @@
+.button{
+    background-color: #ffcc03;
+    border-radius: 2px;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+
+}
+.center{
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+ 
+}
+
+.red{
+    background-color: rgb(247, 128, 128);
+}
