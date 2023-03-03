@@ -7,12 +7,10 @@
   <%= link_to "Edit this card", edit_card_path(@card) %> 
   </div>
 
-  <div class ="button">
-  <%= link_to "Back to cards", cards_path %>
-  </div>
+  <%= link_to "Back to cards", cards_path, class: 'button' %>
   
   <div class ="button red">
-  <%= link_to "Destroy this card", @card, method: :delete %>
+  <%= button_to "Destroy this card", @card, method: :delete %>
   </div>
 </div>
 

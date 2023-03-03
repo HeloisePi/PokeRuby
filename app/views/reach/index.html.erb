@@ -65,11 +65,13 @@ const refreshCards = function() {
                 const cardElement = document.createElement('a');
                 cardElement.classList.add('card', 'flipped');
                 cardElement.innerHTML = `
-                    <div class="effect">
-                        <img class="side front" src="${card.imageUrl}">
-                        <div class="glow"></div>
-                    </div>
-                    <div class="side back"></div>
+                    <a href="/cards/new?image=${card.imageUrl}&name=${card.name}">
+                        <div class="effect">
+                            <img class="side front" src="${card.imageUrl}">
+                            <div class="glow"></div>
+                        </div>
+                        <div class="side back"></div>                   
+                    </a>
                 `;
                 document.querySelector('.cards-container').appendChild(cardElement);
 

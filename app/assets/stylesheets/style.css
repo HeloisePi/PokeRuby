@@ -2,7 +2,6 @@ header{
     position: fixed;
     width: 100vw;
     height: auto;
-    border-bottom: solid 1px #ffcc03;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,12 +10,13 @@ header{
     
 }
 .logo{
+    
     width: auto;
     height: auto;
-    background-color: white;
-    margin-left: 3%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    
+
+    
+
     
 }
 
@@ -30,7 +30,9 @@ header .link {
     
 }
 .link {
-    gap: 2vw;
+    display: flex;
+    justify-content: center;
+    
     
     
 }
@@ -46,4 +48,5 @@ a{
 a{
     width: auto;
     white-space: nowrap;
+    
 }

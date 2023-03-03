@@ -13,6 +13,8 @@ class CardsController < ApplicationController
   # GET /cards/new
   def new
     @card = Card.new
+    @card.name = params[:name]
+    @card.image = params[:image]
   end
 
   # GET /cards/1/edit

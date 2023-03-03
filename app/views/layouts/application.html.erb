@@ -13,11 +13,12 @@
   </head>
   <header>
     <div class="link">
-      <div class=logo>
-        <%= image_tag "logo.svg", height: 45%>
-      </div>
-      <p><%= link_to "Home", cards_path %><p>
-      <p><%= link_to "New card", new_card_path %></p>
+    <%= link_to "Create card", new_card_path %>
+      <a href="<%= root_path %>">
+        <div class="logo">
+          <%= image_tag "logo.svg", height: 100 %>
+        </div>
+      </a>
       <p><%= link_to "Research", reach_path %></p>
     </div>
   </header>
